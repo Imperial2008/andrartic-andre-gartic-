@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrartic</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="login">
+    <h1>Andrartic</h1>
+    <input id="name" placeholder="Seu nome">
+    <select id="theme">
+        <option value="logos">Logos</option>
+        <option value="animais">Animais</option>
+        <option value="veiculos">Veículos</option>
+        <option value="objetos">Objetos</option>
+    </select>
+    <input id="password" placeholder="Senha (opcional)">
+    <button id="createBtn">Criar sala</button>
+
+    <h3>Salas ativas:</h3>
+    <div id="roomsList"></div>
+
+    <h3>Entrar em uma sala:</h3>
+    <input id="roomCodeInput" placeholder="Código da sala">
+    <input id="roomPasswordInput" placeholder="Senha (opcional)">
+    <button id="joinBtn">Entrar</button>
+</div>
+
+<div id="game" style="display:none;">
+    <h2>Andrartic - Sala de jogo</h2>
+    <div id="roomCodeDisplay">Código da Sala: <span id="roomCode"></span></div>
+    <div id="tools">
+        <input type="color" id="colorPicker" value="#000000">
+        <button id="eraserBtn">Borracha</button>
+        <span id="timer">⏱ 60s</span>
+    </div>
+    <canvas id="canvas" width="800" height="500"></canvas>
+    <div id="chat">
+        <div id="messages"></div>
+        <input id="guessInput" placeholder="Digite seu palpite">
+        <button id="sendBtn">Enviar</button>
+    </div>
+    <div id="players"></div>
+    <div id="info"></div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
